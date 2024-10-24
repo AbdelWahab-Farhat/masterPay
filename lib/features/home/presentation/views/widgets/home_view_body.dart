@@ -1,6 +1,4 @@
-import 'dart:developer';
 import 'package:flutter/material.dart';
-import 'package:master_pay/core/utility/size_config.dart';
 import '../../../../../core/widgets/title_with_more.dart';
 import 'home_black_part_of_view.dart';
 import 'home_digital_products_section.dart';
@@ -13,7 +11,6 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    log((SizeConfig.screenHeight * 0.15).toString());
     return const Scaffold(
       body: SingleChildScrollView(
         child: Column(
