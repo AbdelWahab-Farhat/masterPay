@@ -5,8 +5,9 @@ import '../utility/styles.dart';
 class TitleWithMore extends StatelessWidget {
   final String label;
   final void Function()? onTap;
+  final bool hasMore;
   const TitleWithMore({
-    super.key, required this.label, this.onTap,
+    super.key, required this.label, this.onTap,  this.hasMore = true,
   });
 
   @override
@@ -15,9 +16,10 @@ class TitleWithMore extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(label,style: Styles.style16().copyWith(color: const Color(0xff161616)),),
-        GestureDetector(
+        hasMore ? GestureDetector(
             onTap: onTap,
-            child: Text('رؤية المزيد',style: Styles.style14().copyWith(color: const Color(0xff388DEB)),))
+            child: Text('رؤية المزيد',style: Styles.style14().copyWith(color: const Color(0xff388DEB)),)
+        ) : const SizedBox()
       ],
     );
   }
