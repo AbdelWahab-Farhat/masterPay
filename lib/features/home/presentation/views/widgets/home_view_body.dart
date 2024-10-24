@@ -1,10 +1,12 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:master_pay/core/utility/size_config.dart';
-
 import '../../../../../core/widgets/title_with_more.dart';
 import 'home_black_part_of_view.dart';
-import 'home_service_item.dart';
+import 'home_digital_products_section.dart';
+import 'home_pack_section.dart';
+import 'home_service_section.dart';
+
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -12,74 +14,39 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     log((SizeConfig.screenHeight * 0.15).toString());
-    return Scaffold(
-      body: Column(
-        children: [
-          const HomeBlackPartOfView(),
-          Container(
-            padding: const EdgeInsets.only(left: 28, right: 28, top: 21),
-            child: const Column(
+    return const Scaffold(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            HomeBlackPartOfView(),
+            Column(
               children: [
-                TitleWithMore(
-                  label: 'خدمـاتنـــا المميزة',
+                Padding(
+                  padding: EdgeInsets.only(right: 28,left: 28,top: 28),
+                  child: Column(
+                    children: [
+                      TitleWithMore(
+                        label: 'خدمـاتنـــا المميزة',
+                      ),
+                      SizedBox(
+                        height: 16,
+                      ),
+                      HomeServiceSection(),
+                      SizedBox(height: 28,),
+                      HomePackSection(),
+                      SizedBox(height: 14,),
+                      TitleWithMore(
+                        label: 'منتجات رقمية',
+                        hasMore: false,
+                      ),
+                    ],
+                  ),
                 ),
-                SizedBox(
-                  height: 16,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    HomeServiceItem(
-                      svgUrlImg: 'lib/assets/icons/express.svg',
-                      title: 'Shop',
-                    ),
-                    HomeServiceItem(
-                      svgUrlImg: 'lib/assets/icons/master-pay.svg',
-                      title: 'MasterPay',
-                    ),
-
-                    HomeServiceItem(
-                      svgUrlImg: 'lib/assets/icons/pay-link.svg',
-                      title: 'Pay Link',
-                    ),
-                    HomeServiceItem(
-                      svgUrlImg: 'lib/assets/icons/meta-ads.svg',
-                      title: 'Meta ads',
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 16,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    HomeServiceItem(
-                      svgUrlImg: 'lib/assets/icons/offers.svg',
-                      title: 'Offers',
-                      isSoon: true,
-                    ),
-                    HomeServiceItem(
-                      svgUrlImg: 'lib/assets/icons/offers.svg',
-                      title: 'Flay',
-                      isSoon: true,
-                    ),
-                    HomeServiceItem(
-                      svgUrlImg: 'lib/assets/icons/store.svg',
-                      title: 'store',
-                      isSoon: true,
-                    ),
-                    HomeServiceItem(
-                      svgUrlImg: 'lib/assets/icons/master-tap.svg',
-                      title: 'MasterTAP',
-                      isSoon: true,
-                    ),
-                  ],
-                )
+                HomeDigitalProductsSection()
               ],
-            ),
-          )
-        ],
+            )
+          ],
+        ),
       ),
     );
   }
