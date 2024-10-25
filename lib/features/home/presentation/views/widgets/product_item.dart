@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProductItem extends StatelessWidget {
   const ProductItem({super.key});
@@ -6,8 +7,8 @@ class ProductItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 150,
-      padding: const EdgeInsets.all(16),
+      width: 150.w,
+      padding:  EdgeInsets.all(10.sp),
       margin: const EdgeInsets.only(bottom: 16,top: 8,left: 14),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -41,7 +42,6 @@ class ProductItem extends StatelessWidget {
               color: Colors.black,
             ),
           ),
-          const SizedBox(height: 8),
           // Product Price
           const Text(
             '\$878',

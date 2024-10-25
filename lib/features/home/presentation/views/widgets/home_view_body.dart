@@ -11,38 +11,40 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            HomeBlackPartOfView(),
-            Column(
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(right: 28,left: 28,top: 28),
-                  child: Column(
-                    children: [
-                      TitleWithMore(
-                        label: 'خدمـاتنـــا المميزة',
-                      ),
-                      SizedBox(
-                        height: 16,
-                      ),
-                      HomeServiceSection(),
-                      SizedBox(height: 28,),
-                      HomePackSection(),
-                      SizedBox(height: 14,),
-                      TitleWithMore(
-                        label: 'منتجات رقمية',
-                        hasMore: false,
-                      ),
-                    ],
+    return const SafeArea(
+      child: Scaffold(
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              HomeBlackPartOfView(),
+              Column(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(right: 28,left: 28,top: 28),
+                    child: Column(
+                      children: [
+                        TitleWithMore(
+                          label: 'خدمـاتنـــا المميزة',
+                        ),
+                        SizedBox(
+                          height: 16,
+                        ),
+                        HomeServiceSection(),
+                        SizedBox(height: 28,),
+                        HomePackSection(),
+                        SizedBox(height: 14,),
+                        TitleWithMore(
+                          label: 'منتجات رقمية',
+                          hasMore: false,
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-                HomeDigitalProductsSection()
-              ],
-            )
-          ],
+                  HomeDigitalProductsSection()
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );

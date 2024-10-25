@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:master_pay/features/home/presentation/views/widgets/product_item.dart';
 
 import '../../../../../core/utility/size_config.dart';
@@ -11,9 +12,10 @@ class HomeDigitalProductsSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: SizeConfig.screenHeight * 0.30,
+      width: SizeConfig.screenWidth,
+      height: SizeConfig.screenHeight * 0.27,
       child: ListView(
-        padding: const EdgeInsets.only(right: 28,left: 14),
+        padding:  EdgeInsets.only(right: 28.w,left: 14.w),
         scrollDirection: Axis.horizontal,
         children: const [
           ProductItem(),
